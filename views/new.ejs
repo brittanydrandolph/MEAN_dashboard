@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a new wolf</title>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/wolf/new">Add a wolf</a>
+        </li>
+    </ul>
+    <div id="container">
+        <h1>Add a wolf!</h1>
+        <form action="/wolf" method="post">
+            <h3>Name: <input type="text" name="name"></h3>
+            <h3>Age: <input type="text" name="age"></h3>
+            <h3>Color: <input type="text" name="color"></h3>
+            <input type="submit" value="Add wolf">
+        </form>
+        <% if(messages.wolfform) { %>
+            <% for (var x of messages.wolfform) { %>
+                <p id="error"><%= x %></p>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+</html>
